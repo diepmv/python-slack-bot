@@ -1,5 +1,5 @@
 DEBUG: True
-SLACK_TOKEN: "t"
+SLACK_TOKEN: "sadsadsadsat"
 ACTIVE_PLUGINS:
 #    - plugins.repeat.RepeatPlugin
 #    - plugins.myplugin.MyPlugin
