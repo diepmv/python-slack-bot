@@ -1,19 +1,21 @@
 import requests
-import ConfigParser
-
-config = ConfigParser.ConfigParser()
-config.read('config.ini')
+from config import config
 
 
-class OxfordDictionary():
+class OxfordDictionary(object):
 	def __init__(self):
-		self.app_id = config['DEFAULT']['APP_ID']
-		self.app_key = config['DEFAULT']['APP_KEY']
-		self.base_url = config['DEFAULT']['Oxford_API_Base_URL']
+		print(config)
+		self.app_id = config.get('DEFAULT', 'app_id')
+		self.app_key = config.get('DEFAULT', 'app_key')
+		self.base_url = config.get('DEFAULT', 'oxford_api_base_url')
+		
 
 	def get_definition(self, word):
 		url = self.base_url + "/entries/en/{word_id}".format(word_id=word)
 		headers = {'app_id': self.app_id, 'app_key':self.app_key}
-		r = requests.get(url, headers=headers)
+		try:
+			r = requests.get(url, headers=headers)
+		except Exception as e:
+			print(e)
 		print(r.json())
 		return r.json()

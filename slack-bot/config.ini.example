@@ -1,4 +1,4 @@
 [DEFAULT]
-Oxford_API_Base_URL = "	https://od-api.oxforddictionaries.com/api/v1"
-APP_ID = "00a089ea"
-APP_KEY = "f038314e6b7960fd668611b89be840a9"
+oxford_api_base_url: https://od-api.oxforddictionaries.com/api/v1
+app_id: 00a089adasea
+app_key: f038314e6b7960fd668611sadadaab89be840a9
