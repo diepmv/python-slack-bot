@@ -1,22 +1,22 @@
 from rtmbot.core import Plugin, Job
 from clients.slack import User
+from clients.oxford import OxfordDictionary
+
 
 class myJob(Job):
 
 	def run(self, slack_client):
-		user = User('UBYCDR9B6')
-		userChannel = user.get_user_channel(slack_client)
+		userChannel = User('UBYCDR9B6').get_user_channel()
 
 		slack_client.api_call(
 				"chat.postMessage",
 				channel=userChannel,
-				text='Hello from Python! :tada:", icon_emoji=":robot_face:', 
+				text=OxfordDictionary().get_definition('cat'), 
 				as_user=True
 			)
 
 
 		return [["#general", "hello world"]]
-
 
 
 class MyPlugin(Plugin):
