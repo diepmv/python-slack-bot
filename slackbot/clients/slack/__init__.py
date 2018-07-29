@@ -1,15 +1,10 @@
-
-from rtmbot import RtmBot
-import yaml
-
-config = yaml.load(open('rtmbot.conf', 'r'))
-bot = RtmBot(config)
+from globals import slack_client
 
 
-class User(object):
+class Member(object):
 	def __init__(self, member_id):
 		self.member_id = member_id
-		self.client = bot.slack_client
+		self.client = slack_client
 
 
 	def get_user_channel(self):
