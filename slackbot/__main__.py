@@ -5,7 +5,9 @@ import os
 from config import rtmbot_config
 
 
-sys.path.append(os.path.normpath(os.getcwd() + os.sep + os.pardir))
+#sys.path.append(os.path.normpath(os.getcwd() + os.sep + os.pardir))
+# sys.path.append(os.getcwd())
+#os.chdir(os.getcwd() + os.sep + os.pardir))
 
 def main():
     bot = RtmBot(rtmbot_config)

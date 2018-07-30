@@ -15,6 +15,7 @@ class OxfordDictionary(object):
 		headers = {'app_id': self.app_id, 'app_key':self.app_key}
 		try:
 			r = requests.get(url, headers=headers)
+			print(r,5555555555)
 		except Exception as e:
 			print(e)
 		print(r.json())
