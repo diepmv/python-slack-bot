@@ -6,11 +6,12 @@ from clients.oxford import OxfordDictionary
 class myJob(Job):
 
 	def run(self, slack_client):
-		userChannel = Member('UBYCDR9B6').get_user_channel()
-		print 22
+		member = Member('UBYCDR9B6')
+		direct_channel_id = member.get_direct_channel_id()
+
 		slack_client.api_call(
 				"chat.postMessage",
-				channel=userChannel,
+				channel=direct_channel_id,
 				text=OxfordDictionary().get_definition('cat'), 
 				as_user=True
 			)
