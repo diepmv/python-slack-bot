@@ -77,5 +77,6 @@ setup(
         'slackclient==1.2.1',
         'urllib3==1.23',
         'websocket-client==0.48.0',
+	'raven==6.9.0'
     ] + extra_dependencies(),
 )
