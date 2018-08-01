@@ -1,6 +1,7 @@
 from rtmbot.core import Plugin, Job
 from clients.slack import Member
 from clients.oxford import OxfordDictionary
+from globals import sentry_client
 import logging
 
 logger = logging.getLogger(__name__)
@@ -17,9 +18,9 @@ class myJob(Job):
 				text=OxfordDictionary().get_definition('cat'), 
 				as_user=True
 			)
+		logger.error('sent success full with member %s', 'member')
 
-
-		return [["#general", "hello world"]]
+		# return [["#general", "hello world"]]
 
 
 class MyPlugin(Plugin):

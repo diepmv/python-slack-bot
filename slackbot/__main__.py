@@ -4,6 +4,7 @@ import sys
 import os
 from config import rtmbot_config
 import logging
+from raven import Client
 
 
 #sys.path.append(os.path.normpath(os.getcwd() + os.sep + os.pardir))

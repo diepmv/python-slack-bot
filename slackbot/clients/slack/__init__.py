@@ -39,3 +39,5 @@ class Member(object):
 		for mem in all_members:
 			if mem['profile'].get('email') == email:
 				return member['id']
+
+	# Todo: get member name, display name
