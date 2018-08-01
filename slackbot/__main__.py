@@ -3,6 +3,7 @@ from argparse import ArgumentParser
 import sys
 import os
 from config import rtmbot_config
+import logging
 
 
 #sys.path.append(os.path.normpath(os.getcwd() + os.sep + os.pardir))
@@ -10,15 +11,16 @@ from config import rtmbot_config
 #os.chdir(os.getcwd() + os.sep + os.pardir))
 
 def main():
+    logging.basicConfig(filename='slackbot.log', level=logging.DEBUG)
+    logger = logging.getLogger()
+
     bot = RtmBot(rtmbot_config)
-    print bot, 111
     try:
         bot.start()
     except KeyboardInterrupt:
         sys.exit(0)
     except Exception as e:
-    	print(333)
-    	print(e, 111)
+        logger.error('Error when run bot', exc_info=True)
 
 
 if __name__=="__main__":

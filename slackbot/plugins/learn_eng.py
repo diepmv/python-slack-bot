@@ -1,7 +1,9 @@
 from rtmbot.core import Plugin, Job
 from clients.slack import Member
 from clients.oxford import OxfordDictionary
+import logging
 
+logger = logging.getLogger(__name__)
 
 class myJob(Job):
 

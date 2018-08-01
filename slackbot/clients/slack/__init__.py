@@ -12,7 +12,8 @@ class Member(object):
 	user_channel_id
 	'''
 	client = slack_client
-
+	__slots__ = ['member_id']
+	
 	def __init__(self, member_id):
 		self.member_id = member_id
 
