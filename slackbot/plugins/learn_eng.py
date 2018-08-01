@@ -18,7 +18,11 @@ class myJob(Job):
 				text=OxfordDictionary().get_definition('cat'), 
 				as_user=True
 			)
+<<<<<<< HEAD
 		logger.error('sent success full with member %s', 'member')
+=======
+		sentry_client.captureMessage('Sent successfully to member')
+>>>>>>> 99724bfe404a6a577c2951292d6cf9298d653c44
 
 		# return [["#general", "hello world"]]
 
